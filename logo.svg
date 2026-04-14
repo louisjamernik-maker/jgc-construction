@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Wood grain gradient matching the original logo -->
+    <radialGradient id="woodGrain" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#D4874A"/>
+      <stop offset="35%" stop-color="#B56A30"/>
+      <stop offset="65%" stop-color="#8B4513"/>
+      <stop offset="100%" stop-color="#6B3410"/>
+    </radialGradient>
+    <!-- Subtle swirl overlay -->
+    <radialGradient id="woodHighlight" cx="30%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#E0A060" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#B56A30" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#6B3410" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circle background with wood color -->
+  <circle cx="100" cy="100" r="96" fill="url(#woodGrain)"/>
+  <circle cx="100" cy="100" r="96" fill="url(#woodHighlight)"/>
+
+  <!-- House/roof icon -->
+  <g fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Roof peak -->
+    <polyline points="60,82 100,52 140,82"/>
+    <!-- Roof horizontal line -->
+    <line x1="55" y1="82" x2="145" y2="82"/>
+  </g>
+
+  <!-- JGC letters -->
+  <text x="100" y="135" text-anchor="middle"
+        font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="900"
+        font-size="52"
+        fill="white"
+        letter-spacing="2">JGC</text>
+</svg>
