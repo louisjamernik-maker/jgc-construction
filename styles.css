@@ -723,7 +723,7 @@ h4 { font-size: var(--text-lg); }
    ============================================ */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
 }
 
@@ -733,6 +733,8 @@ h4 { font-size: var(--text-lg); }
     background: var(--color-surface);
     box-shadow: var(--shadow-card);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -741,52 +743,44 @@ h4 { font-size: var(--text-lg); }
 }
 
 .project-image {
-    aspect-ratio: 16/10;
+    aspect-ratio: 4/3;
     overflow: hidden;
+    background: #1a1a1a;
 }
 
-/* Beautiful warm gradient placeholders — each one different */
-.project-placeholder {
+.project-image img {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.5);
-    position: relative;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card:nth-child(1) .project-placeholder {
-    background: linear-gradient(135deg, #B8804E 0%, #8B5E34 50%, #6B4526 100%);
-}
-.project-card:nth-child(2) .project-placeholder {
-    background: linear-gradient(135deg, #C49A6C 0%, #9A7350 50%, #7A5A3A 100%);
-}
-.project-card:nth-child(3) .project-placeholder {
-    background: linear-gradient(135deg, #A07048 0%, #7A5030 50%, #5A3820 100%);
-}
-.project-card:nth-child(4) .project-placeholder {
-    background: linear-gradient(135deg, #D4A878 0%, #B08058 50%, #8A6040 100%);
-}
-
-.project-placeholder::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent 0px,
-        transparent 40px,
-        rgba(255,255,255,0.02) 40px,
-        rgba(255,255,255,0.02) 42px
-    );
+.project-card:hover .project-image img {
+    transform: scale(1.05);
 }
 
 .project-info {
     padding: var(--space-lg) var(--space-xl);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
-.project-info h3 { margin-bottom: 4px; }
+.project-category {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent, #B8804E);
+    margin-bottom: 8px;
+}
+.project-info h3 { margin-bottom: 6px; }
 .project-info p { color: var(--color-text-light); font-size: var(--text-sm); }
+
+@media (max-width: 960px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ============================================
    TESTIMONIALS
